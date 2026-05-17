@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reportes — Mood & Weather Score</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/reports.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <main class="container container--wide">
+    <header class="header">
+      <a href="index.html" class="back-link">
+        <i data-lucide="arrow-left"></i> Volver
+      </a>
+      <h1>Repo<span class="accent">rtes</span></h1>
+      <p class="subtitle">Historial de scores agrupado por período</p>
+    </header>
+
+    <section class="filters-card card">
+      <div class="filters-row">
+        <div class="form-group">
+          <label>Período</label>
+          <div class="btn-group">
+            <button class="btn-filter active" data-tipo="todo">Todo</button>
+            <button class="btn-filter" data-tipo="mes">Este mes</button>
+            <button class="btn-filter" data-tipo="semana">Esta semana</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Usuario</label>
+          <select id="filtro-usuario">
+            <option value="0">Todos</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="resumen-grid" id="resumen-grid">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">
+        <i data-lucide="list"></i> Registros recientes
+      </h2>
+      <div class="table-wrap">
+        <table id="tabla-detalle">
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Mood</th>
+              <th>Score</th>
+              <th>Clima</th>
+              <th>Temp</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-body">
+            <tr><td colspan="6" class="table-empty">Cargando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="nav-link">
+      <a href="index.html">
+        <i data-lucide="arrow-left"></i> Registrar nuevo score
+      </a>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/reports.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
